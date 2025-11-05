@@ -1,22 +1,28 @@
 ------------------------------------------------------
-Run and stop the docker image in local
-- In the project folder structure: 
--- docker build -t my-fastapi-app .
--- docker run -p 8080:8080 my-fastapi-app
+## 🐳 Run and Stop the Docker Image Locally
+### 🔧 Build and Run the Docker Image
+In the project folder, run:
 
-Run the app:
+```bash
+docker build -t my-fastapi-app .
+docker run -p 8080:8080 my-fastapi-app
+```
+
+## Access the app:
 http://localhost:8080/docs
 
-- Stop the docker container:
--- docker ps --> get the image ID (abc123def456)
--- docker stop abc123def456
-
+## Stop the docker container:
+```
+docker ps --> get the image ID (abc123def456)
+docker stop abc123def456
+```
 ------------------------------------------------------
 
 # AWS Deployment
 1️⃣ Create ECR Repository
 
 Go to ECR (Elastic Container Registry) in AWS console.
+
 
 Click “Create Repository”.
 
