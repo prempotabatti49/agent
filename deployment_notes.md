@@ -35,14 +35,16 @@ After creating, note down the repository URI (like 523473407569.dkr.ecr.us-east-
 2️⃣ Push Docker image to ECR
 
 In your terminal:
-### aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 523473407569.dkr.ecr.us-east-1.amazonaws.com
- (gets temporary token from aws and puts into the docker login command using --password-stdin)
+```
+aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 523473407569.dkr.ecr.us-east-1.amazonaws.com
+(gets temporary token from aws and puts into the docker login command using --password-stdin)
 
-### docker tag my-fastapi-app:latest 523473407569.dkr.ecr.us-east-1.amazonaws.com/my-fastapi-app:latest
+docker tag my-fastapi-app:latest 523473407569.dkr.ecr.us-east-1.amazonaws.com/my-fastapi-app:latest
 (This command is used to tag a Docker image so it can be pushed to a specific Amazon Elastic Container Registry (ECR) repository)
 
-### docker push 123456789012.dkr.ecr.us-east-1.amazonaws.com/my-fastapi-app:latest
+docker push 123456789012.dkr.ecr.us-east-1.amazonaws.com/my-fastapi-app:latest
 (This command is used to upload a Docker image from your local machine to your Amazon Elastic Container Registry (ECR))
+```
 
 3️⃣ Create ECS Cluster
 
