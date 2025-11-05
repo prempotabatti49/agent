@@ -1,15 +1,15 @@
 ------------------------------------------------------
-run and stop the docker image in local
+Run and stop the docker image in local
 - In the project folder structure: 
-docker build -t my-fastapi-app .
-docker run -p 8080:8080 my-fastapi-app
+-- docker build -t my-fastapi-app .
+-- docker run -p 8080:8080 my-fastapi-app
 
 Run the app:
 http://localhost:8080/docs
 
-Stop the docker container:
-docker ps --> get the image ID (abc123def456)
-docker stop abc123def456
+- Stop the docker container:
+-- docker ps --> get the image ID (abc123def456)
+-- docker stop abc123def456
 
 ------------------------------------------------------
 
