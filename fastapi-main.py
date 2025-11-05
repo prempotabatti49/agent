@@ -28,6 +28,4 @@ def chat(request: ChatRequest):
     x = response.choices[0].message.content.strip().replace("\n", "<br>")
     print(response.choices[0].message.content)
     return {"reply": x}
-
-
-
+    
