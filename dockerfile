@@ -16,5 +16,5 @@ COPY . .
 # Expose the FastAPI port
 EXPOSE 8080
 
-# Start FastAPI using uvicorn
-CMD ["uvicorn", "fastapi-main:app", "--host", "0.0.0.0", "--port", "8080"]
+# Start FastAPI using uvicorn. hostPort:containerPort
+CMD ["uvicorn", "fastapi-main:app", "--host", "0.0.0.0", "--port", "8080"]  

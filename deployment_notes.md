@@ -38,11 +38,13 @@ In your terminal:
 ```
 aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 523473407569.dkr.ecr.us-east-1.amazonaws.com
 (gets temporary token from aws and puts into the docker login command using --password-stdin)
+[Logging in with your password grants your terminal complete access to your account.
+For better security, log in with a limited-privilege personal access token. Learn more at https://docs.docker.com/go/access-tokens/]]
 
 docker tag my-fastapi-app:latest 523473407569.dkr.ecr.us-east-1.amazonaws.com/my-fastapi-app:latest
 (This command is used to tag a Docker image so it can be pushed to a specific Amazon Elastic Container Registry (ECR) repository)
 
-docker push 123456789012.dkr.ecr.us-east-1.amazonaws.com/my-fastapi-app:latest
+docker push 523473407569.dkr.ecr.us-east-1.amazonaws.com/my-fastapi-app:latest
 (This command is used to upload a Docker image from your local machine to your Amazon Elastic Container Registry (ECR))
 ```
 
@@ -85,6 +87,13 @@ Attach the Task Definition.
 Number of tasks: 1.
 
 In Networking, attach a VPC + Subnet + Security group (allow inbound 8080).
+```
+Public IP: ON (this will give public IP address)
+🌐 When to enable public IP assignment
+- Public-facing services: If your ECS task hosts a web server, REST API, or any service that must be reachable from the internet.
+- Public subnet: Your task must be launched in a public subnet with a route to an internet gateway.
+- No NAT setup: If you're not using a NAT Gateway and still need internet access (e.g., to pull container images or access external APIs), enabling public IP may be necessary
+```
 
 Enable a Public Load Balancer if you want public access.
 
