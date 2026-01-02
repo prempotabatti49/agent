@@ -20,6 +20,7 @@ client = OpenAI()  # or leave empty if set in env
 def chat(request: ChatRequest):
     response = client.chat.completions.create(
         model="gpt-4o",  # cheaper + faster model for apps
+        system_prompt = "You are a helpful AI Assistant."
         messages=[
             {"role": "system", "content": "You are a helpful AI assistant."},
             {"role": "user", "content": f"{request.message}"}
@@ -29,3 +30,6 @@ def chat(request: ChatRequest):
     print(response.choices[0].message.content)
     return {"reply": x}
     
+@app.get("/")
+def home():
+    return {"status": "okay"}
