@@ -53,7 +53,6 @@ client = OpenAI()
 def chat(request: ChatRequest):
     response = client.chat.completions.create(
         model="gpt-4o",  # cheaper + faster model for apps
-        system_prompt = "You are a helpful AI Assistant.",
         messages=[
             {"role": "system", "content": "You are a helpful AI assistant."},
             {"role": "user", "content": f"{request.message}"}
