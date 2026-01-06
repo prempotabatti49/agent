@@ -40,7 +40,7 @@ print(f"START OF MAIN FUNCTION")
 # print('SETTING OPENAI KEY IN ENV VARIABLES')
 # os.environ["OPENAI_API_KEY"] = openai_api_key
 
-print("STARTING FASTAPI - ")
+print("STARTING FASTAPI")
 app = FastAPI()
 
 # Load environment variables from .env file
